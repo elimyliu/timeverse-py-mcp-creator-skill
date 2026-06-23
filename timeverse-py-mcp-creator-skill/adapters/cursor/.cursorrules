@@ -1,0 +1,43 @@
+# Cursor Rules - Python MCP Server 项目脚手架
+
+## Description
+当用户要求创建/搭建/初始化 Python MCP Server 项目时，自动生成完整的项目骨架，包含最佳实践的项目结构、构建配置、CI/CD、测试和文档模板。
+
+## Workflow
+
+### 1. 确认用户需求
+- 充分理解 MCP Server 的功能/用途
+- 如果用户描述不清晰，主动追问直到需求明确
+- 确认：项目名称、Python 包名、工具名称和功能、外部依赖
+
+### 2. 项目结构
+生成以下目录结构：
+```
+<project-name>/
+├── .github/workflows/{ci.yml, release.yml}
+├── docs/{USAGE.md, claude_desktop_config.example.json, claude_desktop_config.uvx.example.json}
+├── src/<package_name>/{__init__.py, server.py, executor.py}
+├── tests/{__init__.py, test_server.py, test_executor.py}
+├── .gitignore
+├── .python-version (3.12)
+├── CHANGELOG.md
+├── LICENSE (MIT)
+├── pyproject.toml
+└── README.md
+```
+
+### 3. 核心文件模板
+- pyproject.toml: hatchling 构建, ruff + mypy + pytest 配置
+- server.py: mcp>=1.0.0, stdio_server, list_tools/call_tool
+- 测试: pytest-asyncio, unittest.mock
+- CI: 3 OS × 3 Python (3.10-3.12), ruff, mypy, pytest
+- Release: 推 tag 自动发布 PyPI (OIDC)
+
+### 4. 设计原则
+- 最小依赖：运行时只依赖 mcp>=1.0.0
+- 类型安全：mypy strict mode
+- 跨平台兼容
+- Hatchling 构建
+
+### 完整模板
+完整的代码模板请参考同目录下的 `skill.md` 文件。

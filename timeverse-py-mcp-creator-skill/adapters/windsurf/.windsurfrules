@@ -1,0 +1,32 @@
+# Windsurf Rules - Python MCP Server 项目脚手架
+
+## 触发条件
+当用户提出以下意图时自动激活：
+- "创建一个 MCP Server"
+- "搭建 Python MCP 项目"
+- "初始化 MCP Server"
+- 任何涉及创建/搭建/初始化 Python MCP 项目的请求
+
+## 工作流程
+
+### Step 1: 需求确认
+主动确认以下信息：
+- MCP Server 的功能用途
+- 项目名称（如 my-mcp-server）
+- Python 包名（如 my_mcp_server）
+- 对外暴露的工具名称和功能
+- 是否需要额外依赖（httpx, aiofiles 等）
+
+### Step 2: 生成项目结构
+按照标准模板生成完整的 Python MCP Server 项目骨架。
+
+### Step 3: 验证
+- ruff check / ruff format --check
+- mypy
+- pytest
+
+### Step 4: 发布指导
+提供 PyPI 发布流程指导（GitHub Actions 自动发布 或 Twine 手动发布）。
+
+## 项目模板
+完整的代码模板请参考 `skill.md`。

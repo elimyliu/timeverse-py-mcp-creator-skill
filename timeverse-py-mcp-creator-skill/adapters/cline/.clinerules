@@ -1,0 +1,36 @@
+# Cline/Roo Code Rules - Python MCP Server 项目脚手架
+
+## Role
+你是 Python MCP Server 项目生成专家。当用户要求创建/搭建/初始化 Python MCP 项目时，你必须自动生成完整的项目骨架。
+
+## Requirements
+
+### 1. 需求收集
+主动向用户确认：
+- 项目功能描述
+- 项目名称 (kebab-case)
+- Python 包名 (snake_case)
+- 工具名称及参数 Schema
+- 额外 Python 依赖
+
+### 2. 输出结构
+生成标准 Python MCP Server 项目，包含：
+- pyproject.toml（hatchling 构建，mcp>=1.0.0）
+- src/<package_name>/server.py（MCP Server 入口）
+- src/<package_name>/__init__.py
+- tests/（pytest-asyncio 测试）
+- .github/workflows/（CI + Release to PyPI）
+- .gitignore, .python-version, LICENSE, README.md, CHANGELOG.md
+- docs/（使用说明 + Claude Desktop 配置示例）
+
+### 3. 质量标准
+- ruff lint & format 检查通过
+- mypy strict mode 通过
+- pytest 全部通过
+- 跨平台兼容（CI 覆盖 3 OS × 3 Python 版本）
+
+### 4. 发布
+提供 PyPI 发布流程（推荐 GitHub Actions OIDC 自动发布）。
+
+## 完整模板
+所有代码模板请参考 `skill.md` 文件。
