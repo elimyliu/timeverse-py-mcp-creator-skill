@@ -1,75 +1,47 @@
-# Python MCP Server 项目脚手架 - 通用技能包
+# Python MCP Server 项目脚手架 — 通用技能包
 
-自动创建完整的 **Python MCP Server** 项目骨架，包含最佳实践的项目结构、构建配置、CI/CD、测试和文档模板。
+自动搭建 **Python MCP Server** 项目骨架。包含最佳实践的项目结构、构建配置、CI/CD、测试和文档模板。
 
-## 目录结构
+## 文件结构
 
 ```
-timeverse-py-mcp-creator-skill/
-├── skill.md                          # 通用技能核心内容（平台无关）
-├── adapters/
-│   ├── trae/
-│   │   └── SKILL.md                 # Trae IDE 格式
-│   ├── cursor/
-│   │   └── .cursorrules             # Cursor 格式
-│   ├── windsurf/
-│   │   └── .windsurfrules           # Windsurf 格式
-│   ├── cline/
-│   │   └── .clinerules              # Cline / Roo Code 格式
-│   └── github-copilot/
-│       └── copilot-instructions.md  # GitHub Copilot 格式
-├── install.sh                       # 一键安装脚本
-└── README.md                        # 本文件
+.
+├── skill.md       # 核心技能定义
+├── README.md      # 本文件
+└── .gitignore
 ```
 
-## 安装方法
+## 安装方式
+
+### TimeVerse Studio
+
+1. 打开 TimeVerse Studio
+2. 进入 **设置 → 技能 → 添加技能包**
+3. 选择本仓库的 `skill.md` 文件
+4. 保存后即可在对话中使用
 
 ### Trae IDE
 
-```bash
-# 将 adapters/trae/ 下的内容复制到项目 .trae/skills/ 目录
-cp -r adapters/trae /path/to/your/project/.trae/skills/timeverse-py-mcp-creator
-```
-
-### Cursor
-
-```bash
-# 将 adapters/cursor/.cursorrules 复制到项目根目录
-cp adapters/cursor/.cursorrules /path/to/your/project/.cursorrules
-```
-
-### Windsurf
-
-```bash
-# 将 adapters/windsurf/.windsurfrules 复制到项目根目录
-cp adapters/windsurf/.windsurfrules /path/to/your/project/.windsurfrules
-```
-
-### Cline / Roo Code (VS Code)
-
-```bash
-# 将 adapters/cline/.clinerules 复制到项目根目录
-cp adapters/cline/.clinerules /path/to/your/project/.clinerules
-```
-
-### GitHub Copilot
-
-```bash
-# 将 adapters/github-copilot/copilot-instructions.md 放到项目 .github/ 目录
-cp adapters/github-copilot/copilot-instructions.md /path/to/your/project/.github/copilot-instructions.md
-```
-
-### 一键安装
-
-```bash
-# 在项目根目录运行
-chmod +x install.sh && ./install.sh
-```
+将本项目添加为技能后，提出以下需求即可自动生成项目。
 
 ## 使用方式
 
-安装后在对应 AI 客户端中提出以下需求即可自动生成项目：
+### 从零创建
 
 - "帮我创建一个 Python MCP Server"
 - "搭建一个 MCP 项目，功能是 xxx"
 - "初始化一个 Python MCP Server 脚手架"
+
+### 基于第三方 API 文档生成
+
+提供第三方 API 文档，自动生成对应的 MCP Server：
+
+- "根据这个 API 文档帮我创建一个 MCP Server：[文档链接]"
+- "基于 xxx 的 API 文档生成一个 MCP Server"
+- "把这个 OpenAPI 规范转成一个 MCP Server 项目"
+
+支持的文档格式：
+
+- OpenAPI / Swagger 文档（JSON/YAML）
+- API 文档链接或 Markdown 文档
+- cURL 示例或接口描述文本
